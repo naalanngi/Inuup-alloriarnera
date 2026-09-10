@@ -1,0 +1,263 @@
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosystem Master Hub v3.0: Absolute Freedom</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-blue: #58a6ff;
+            --accent-red: #ff7b72;
+            --accent-purple: #d2a8ff;
+            --accent-teal: #39c5bb;
+            --accent-orange: #f0883e;
+            --success-color: #2ea44f;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-top: 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        h2.section-title {
+            font-size: 14px;
+            color: #fff;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 6px;
+            margin-top: 28px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .label-val { float: right; font-weight: bold; }
+        .blue-val { color: var(--accent-blue); }
+        .red-val { color: var(--accent-red); }
+        .purple-val { color: var(--accent-purple); }
+        .teal-val { color: var(--accent-teal); }
+        .orange-val { color: var(--accent-orange); }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 4px;
+        }
+        
+        input#burnout { accent-color: var(--accent-blue); }
+        input#hoursPerWeek, input#overhead { accent-color: var(--accent-red); }
+        input#conversionRate { accent-color: var(--accent-purple); }
+        input#manualHours { accent-color: var(--accent-teal); }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        .results-box {
+            background: #0d1117;
+            border-left: 4px solid var(--success-color);
+            padding: 14px;
+            border-radius: 4px;
+            margin-top: 14px;
+        }
+        
+        .results-box.blue-b { border-left-color: var(--accent-blue); }
+        .results-box.red-b { border-left-color: var(--accent-red); }
+        .results-box.purple-b { border-left-color: var(--accent-purple); }
+        .results-box.teal-b { border-left-color: var(--accent-teal); }
+
+        .result-item {
+            margin-bottom: 10px;
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .result-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .leverage-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .model-tag {
+            background: rgba(240, 136, 62, 0.15);
+            color: var(--accent-orange);
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .model-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .model-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .ad-placeholder {
+            margin-top: 28px;
+            border: 1px dashed #30363d;
+            padding: 12px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ecosystem Mega Hub v3.0</h1>
+    <p class="subtitle">Autonomous AI Admin Framework Architecture</p>
+
+    <!-- MODULE 1: ESCAPE FOOTPRINT ENGINE -->
+    <h2 class="section-title" style="color: var(--accent-blue);">1. Escape Footprint Engine</h2>
+    <div class="input-group">
+        <label for="income">Monthly Corporate Income <span class="label-val blue-val">$<span id="income-txt">4000</span></span></label>
+        <input type="number" id="income" value="4000" min="0" oninput="calculateEcosystem()">
+    </div>
+    <div class="input-group">
+        <label for="expenses">Absolute Survival Costs <span class="label-val blue-val">$<span id="expenses-txt">2500</span></span></label>
+        <input type="number" id="expenses" value="2500" min="0" oninput="calculateEcosystem()">
+    </div>
+    <div class="input-group">
+        <label for="burnout">Job Misery Factor <span class="label-val blue-val"><span id="burnout-txt">7</span>/10</span></label>
+        <input type="range" id="burnout" min="1" max="10" value="7" oninput="calculateEcosystem()">
+    </div>
+    <div class="results-box blue-b">
+        <div class="result-item">
+            <div class="result-label">Corporate Burnout Penalty (Stress Overhead)</div>
+            <div class="result-value" id="burnout-penalty" style="color: var(--accent-red); font-size: 15px;">$0.00 / mo</div>
+        </div>
+        <div class="result-item" style="margin-top: 8px;">
+            <div class="result-label">True Target Required for Freedom Balance</div>
+            <div class="result-value" id="true-target" style="color: #56d364; font-size: 20px;">$0.00 / mo</div>
+        </div>
+    </div>
+
+    <!-- MODULE 2: RATE PRICING ENGINE -->
+    <h2 class="section-title" style="color: var(--accent-red);">2. Rate Pricing Engine</h2>
+    <div class="input-group">
+        <label for="hoursPerWeek">Weekly Production/Client Hours <span class="label-val red-val"><span id="hours-txt">20</span> hrs</span></label>
+        <input type="range" id="hoursPerWeek" min="5" max="40" value="20" oninput="calculateEcosystem()">
+    </div>
+    <div class="input-group">
+        <label for="overhead">Digital Tax & Software Buffer <span class="label-val red-val"><span id="overhead-txt">30</span>%</span></label>
+        <input type="range" id="overhead" min="10" max="50" value="30" oninput="calculateEcosystem()">
+    </div>
+    <div class="results-box red-b">
+        <div class="result-item">
+            <div class="result-label">Unbillable Admin Friction Buffer</div>
+            <div class="result-value" id="admin-cushion" style="color: var(--text-muted); font-size: 14px;">+$0.00 / hr</div>
+        </div>
+        <div class="result-item" style="margin-top: 8px;">
+            <div class="result-label">Calculated Freedom Rate Requirement</div>
+            <div class="result-value" id="final-rate" style="color: #56d364; font-size: 22px;">$0.00 / hr</div>
+        </div>
+    </div>
+
+    <!-- MODULE 3: TRAFFIC VOLUME CORE -->
+    <h2 class="section-title" style="color: var(--accent-purple);">3. Traffic Volume Core</h2>
+    <div class="input-group">
+        <label for="productPrice">Average Price of Your Asset <span class="label-val purple-val">$<span id="price-txt">25</span></span></label>
+        <input type="number" id="productPrice" value="25" min="1" oninput="calculateEcosystem()">
+    </div>
+    <div class="input-group">
+        <label for="conversionRate">Conversion Rate (Industry Standard) <span class="label-val purple-val"><span id="conversion-txt">2.0</span>%</span></label>
+        <input type="range" id="conversionRate" min="0.1" max="10" step="0.1" value="2.0" oninput="calculateEcosystem()">
+    </div>
+    <div class="results-box purple-b">
+        <div class="result-item">
+            <div class="result-label">Required Digital Sales Volume</div>
+            <div class="result-value" id="sales-needed" style="font-size: 15px;">0 units / mo</div>
+        </div>
+        <div class="result-item" style="margin-top: 8px;">
+            <div class="result-label">Daily Traffic Baseline Target</div>
+            <div class="result-value" id="daily-traffic" style="color: #56d364; font-size: 22px;">0 visitors / day</div>
+        </div>
+    </div>
+
+    <!-- MODULE 4: OUTSOURCE FRICTION TRACKER -->
+    <h2 class="section-title" style="color: var(--accent-teal);">4. Outsource Friction Tracker</h2>
+    <div class="input-group">
+        <label for="manualHours">Monthly Hours Lost to Tedious Tasks <span class="label-val teal-val"><span id="manual-hours-txt">15</span> hrs</span></label>
+        <input type="range" id="manualHours" min="2" max="60" value="15" oninput="calculateEcosystem()">
+    </div>
+    <div class="input-group">
+        <label for="automationCost">Monthly 
